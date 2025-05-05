@@ -1,4 +1,4 @@
-# Contributing to Soenneker.Libraries.NuGet
+﻿# Contributing to Soenneker.Libraries.NuGet
 
 We're excited that you're interested in contributing!
 
