@@ -45,7 +45,7 @@
 
     <ItemGroup>
         <Content Include="Resources\nuget.exe" Pack="true" PackageCopyToOutput="true"
-                 ContentTargetFolders="contentFiles">
+                 CPackagePath="contentFiles\any\any\Resources\">
         </Content>
     </ItemGroup>
 </Project>
