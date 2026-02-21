@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <Project Sdk="Microsoft.NET.Sdk">
 
@@ -44,8 +44,10 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Content Include="Resources\nuget.exe" Pack="true" PackageCopyToOutput="true"
-                PackagePath="contentFiles\any\any\Resources\" BuildAction="None">
-        </Content>
+        <None Include="Resources\**\*.*"
+              Pack="true"
+              PackageCopyToOutput="true"
+              PackagePath="contentFiles/any/any/Resources/%(RecursiveDir)"
+              BuildAction="None"/>
     </ItemGroup>
 </Project>
