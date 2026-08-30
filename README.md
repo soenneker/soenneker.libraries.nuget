@@ -5,7 +5,7 @@
 
 # Soenneker.Libraries.NuGet
 
-Adds the NuGet cli executable (nuget.exe), updated daily (if available).
+The NuGet command-line executable packaged as a .NET content asset.
 
 ## Install
 
@@ -13,11 +13,12 @@ Adds the NuGet cli executable (nuget.exe), updated daily (if available).
 dotnet add package Soenneker.Libraries.NuGet
 ```
 
-## What it provides
+The package copies `nuget.exe` beneath the application output directory:
 
-- Adds the NuGet cli executable (nuget.exe), updated daily (if available).
-- The file is copied to the output directory, and located at the relative path: `Resources\`.
+```csharp
+string nuget = Path.Combine(AppContext.BaseDirectory, "Resources", "nuget.exe");
+```
 
-## How to use it
+This package supplies the executable but does not start or configure NuGet. Prefer the `dotnet nuget` commands when they cover the required operation; use this package for NuGet CLI commands that need `nuget.exe` specifically.
 
-After installation, resolve the packaged file from the output-relative path above. The package deploys the asset but does not invoke it for you.
+Pass each value through `ProcessStartInfo.ArgumentList`. Do not place feed API keys in logged command strings, and check the process exit code before treating an operation as successful.
